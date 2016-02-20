@@ -8,11 +8,11 @@ Pipe Board only works between OSX computers. You must have [key-based SSH access
 
 ## Setup/Installation
 
-1. Visit releases to grab the latest build or source code.
-2. Once the app is running, click on the clipboard on the status bar.
+1. Visit [releases](https://github.com/dillonhafer/pipe-board/releases) to grab the latest build or source code.
+2. Once the app is running, click on the :clipboard: on the status bar.
 3. Choose "Configure" from the menu.
-4. Enter a title, that will show up in the menu, and a computer address (ssh address. i.e `user@example.com`)
-5. Click on the clipboard on the status again and choose the computer to send your clipboard to
+4. Enter a title, that will show up in the menu, and a computer address (ssh address. i.e `user@example.com`).
+5. Click on the :clipboard: on the status bar again, and choose the computer you want to send your clipboard to.
 
 ## Credits
 
