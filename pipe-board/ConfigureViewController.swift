@@ -28,7 +28,7 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
       self.serverTable.insertRowsAtIndexes(NSIndexSet(index: newRowIndex), withAnimation: NSTableViewAnimationOptions.EffectGap)
       self.serverTable.selectRowIndexes(NSIndexSet(index: newRowIndex), byExtendingSelection:false)
       self.serverTable.scrollRowToVisible(newRowIndex)
-      saveServers()
+      Server.saveServers(servers)
     }
   }
   
@@ -46,7 +46,7 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
         }
         idx++
       }
-      saveServers()
+      Server.saveServers(servers)
     }
   }
 
@@ -55,26 +55,13 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
       fetchServers()
   }
   
-  func saveServers() {
-    let data = NSKeyedArchiver.archivedDataWithRootObject(self.servers)
-    NSUserDefaults.standardUserDefaults().setObject(data, forKey: "PipeBoard:servers")
-  }
-  
   func fetchServers() {
-    let prefs = NSUserDefaults.standardUserDefaults()
-    let data = prefs.objectForKey("PipeBoard:servers") as? NSData
+    servers = Server.allServers()
+
+    let max = servers.count == 0 ? 0 : servers.count - 1
+    let range = NSMakeRange(0, max)
     
-    if let data = data {
-      let servers = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [Server]
-      
-      if let servers = servers {
-        self.servers = servers
-        let max = servers.count - 1
-        let range = NSMakeRange(0, max)
-        
-        self.serverTable.insertRowsAtIndexes(NSIndexSet(indexesInRange: range), withAnimation: NSTableViewAnimationOptions.EffectGap)
-      }
-    }
+    self.serverTable.insertRowsAtIndexes(NSIndexSet(indexesInRange: range), withAnimation: NSTableViewAnimationOptions.EffectGap)
   }
   
   func selectedServerRow() -> Server? {

@@ -41,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     NSApp.activateIgnoringOtherApps(true)
     closePopover(1)
     menu.removeAllItems()
-    fetchServers()
+    createServerItems()
     menu.addItem(NSMenuItem.separatorItem())
     menu.addItem(NSMenuItem(title: "Configure", action: "togglePopover:", keyEquivalent: ""))
     menu.addItem(NSMenuItem(title: "Quit", action: "terminate:", keyEquivalent: "q"))
@@ -83,19 +83,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     return clipboard.stringForType(NSPasteboardTypeString)!
   }
   
-  func fetchServers() {
-    let prefs = NSUserDefaults.standardUserDefaults()
-    let data = prefs.objectForKey("PipeBoard:servers") as? NSData
-    
-    if let data = data {
-      let servers = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [Server]
-      
-      if let servers = servers {
-        self.servers = servers
-        for server in servers {
-          self.menu.addItem(NSMenuItem.init(title: server.title!, action: "sendClipboard:", keyEquivalent: ""))
-        }
-      }
+  func createServerItems() {
+    self.servers = Server.allServers()
+
+    for server in self.servers {
+      self.menu.addItem(NSMenuItem.init(title: server.title!, action: "sendClipboard:", keyEquivalent: ""))
     }
   }
   
