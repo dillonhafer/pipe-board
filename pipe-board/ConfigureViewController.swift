@@ -26,8 +26,6 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
       self.servers.append(newServer)
       
       self.serverTable.insertRowsAtIndexes(NSIndexSet(index: newRowIndex), withAnimation: NSTableViewAnimationOptions.EffectGap)
-      self.serverTable.selectRowIndexes(NSIndexSet(index: newRowIndex), byExtendingSelection:false)
-      self.serverTable.scrollRowToVisible(newRowIndex)
       Server.saveServers(servers)
     }
   }
