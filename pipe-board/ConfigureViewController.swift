@@ -17,7 +17,7 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
   var servers: [Server] = []
 
   @IBAction func Save(sender: AnyObject) {
-    if !newTitle.stringValue.isEmpty && !remoteAddress.stringValue.isEmpty {
+    if newTitle.stringValue.present() && remoteAddress.stringValue.present() {
       let newServer = Server(title: newTitle.stringValue, address: remoteAddress.stringValue)
       newTitle.stringValue = ""
       remoteAddress.stringValue = ""
