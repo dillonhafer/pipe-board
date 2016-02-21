@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		514391D01C7949E100A655E3 /* CoreExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514391CF1C7949E100A655E3 /* CoreExtensions.swift */; };
 		51AA266A1C78148D009606DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA26691C78148D009606DD /* AppDelegate.swift */; };
 		51AA266C1C78148D009606DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51AA266B1C78148D009606DD /* Assets.xcassets */; };
 		51AA266F1C78148D009606DD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51AA266D1C78148D009606DD /* MainMenu.xib */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		514391CF1C7949E100A655E3 /* CoreExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreExtensions.swift; sourceTree = "<group>"; };
 		51AA26661C78148D009606DD /* Pipe Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pipe Board.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51AA26691C78148D009606DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51AA266B1C78148D009606DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				51AA267A1C781C77009606DD /* EventMonitor.swift */,
 				51AA26771C781580009606DD /* ConfigureViewController.xib */,
 				51AA267C1C7829B5009606DD /* Server.swift */,
+				514391CF1C7949E100A655E3 /* CoreExtensions.swift */,
 			);
 			path = "pipe-board";
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				51AA267B1C781C77009606DD /* EventMonitor.swift in Sources */,
 				51AA266A1C78148D009606DD /* AppDelegate.swift in Sources */,
 				51AA267D1C7829B5009606DD /* Server.swift in Sources */,
+				514391D01C7949E100A655E3 /* CoreExtensions.swift in Sources */,
 				51AA26781C781580009606DD /* ConfigureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +289,7 @@
 				51AA26751C78148D009606DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
