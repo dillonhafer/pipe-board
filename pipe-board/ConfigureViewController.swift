@@ -36,13 +36,8 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
       self.serverTable.removeRowsAtIndexes(NSIndexSet(index:self.serverTable.selectedRow),
         withAnimation: NSTableViewAnimationOptions.SlideUp)
       
-      var idx = 0
-      for s in servers {
-        if s == server {
-          servers.removeAtIndex(idx)
-        }
-        idx++
-      }
+      let idx = findServerIndex(server)
+      servers.removeAtIndex(idx)
       Server.saveServers(servers)
     }
   }
@@ -50,6 +45,17 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
   override func viewDidLoad() {
     super.viewDidLoad()
     fetchServers()
+  }
+  
+  func findServerIndex(server: Server) -> Int {
+    var idx = 0
+    for s in servers {
+      if s == server {
+        return idx
+      }
+      idx++
+    }
+    return -1
   }
   
   func fetchServers() {
