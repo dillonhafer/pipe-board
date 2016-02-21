@@ -31,6 +31,10 @@ class Server: NSObject, NSCoding {
     coder.encodeObject(self.address, forKey: "address")
     coder.encodeObject(self.className, forKey: "className")
   }
+
+  func valid() -> Bool {
+    return title!.present() && address!.present()
+  }
   
   class func saveServers(servers: [Server]) {
     let data = NSKeyedArchiver.archivedDataWithRootObject(servers)
