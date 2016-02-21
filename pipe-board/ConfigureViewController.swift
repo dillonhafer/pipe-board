@@ -9,37 +9,46 @@
 import Cocoa
 
 class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
-  @IBOutlet weak var newTitle: NSTextField!
-  @IBOutlet weak var remoteAddress: NSTextField!
   @IBOutlet weak var serverTable: NSTableView!
+  @IBOutlet weak var removeButton: NSButton!
+  @IBOutlet weak var errorBox: NSTextField!
 
-  @IBOutlet weak var deleteButton: NSButton!
   var servers: [Server] = []
 
+  @IBAction func Add(sender: AnyObject) {
+    let newServer = Server(title:"", address: "")
+    let idx = self.servers.count
+    self.servers.append(newServer)
+    self.serverTable.insertRowsAtIndexes(NSIndexSet(index: idx), withAnimation: NSTableViewAnimationOptions.SlideDown)
+  }
+
   @IBAction func Save(sender: AnyObject) {
-    if newTitle.stringValue.present() && remoteAddress.stringValue.present() {
-      let newServer = Server(title: newTitle.stringValue, address: remoteAddress.stringValue)
-      newTitle.stringValue = ""
-      remoteAddress.stringValue = ""
+    let text = sender as? NSTextField
+    let row = self.serverTable.rowForView(text!)
+    let columnName = text!.identifier! as String
+    let newValue = text!.stringValue.trim()
+    if row >= 0 {
+      let server = self.servers[row]
+      switch columnName {
+        case "title":
+          server.title = newValue
+        case "address":
+          server.address = newValue
+        default:
+          return
+      }
 
-      let newRowIndex = self.servers.count
-      self.servers.append(newServer)
-
-      self.serverTable.insertRowsAtIndexes(NSIndexSet(index: newRowIndex), withAnimation: NSTableViewAnimationOptions.EffectGap)
-      Server.saveServers(servers)
-    } else {
-      let alert: NSAlert = NSAlert()
-      alert.messageText = "Missing Fields"
-      alert.informativeText = "You must enter a title and address"
-      alert.alertStyle = NSAlertStyle.InformationalAlertStyle
-      alert.addButtonWithTitle("Got It")
-      alert.runModal()
+      if server.valid() {
+        Server.saveServers(servers)
+        errorBox.hidden = true
+      } else {
+        errorBox.hidden = false
+      }
     }
   }
 
   @IBAction func Delete(sender: AnyObject) {
     if let server = selectedServerRow() {
-      deleteButton.hidden = true
       self.serverTable.removeRowsAtIndexes(NSIndexSet(index:self.serverTable.selectedRow),
         withAnimation: NSTableViewAnimationOptions.SlideUp)
 
@@ -51,6 +60,7 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    removeButton.enabled = false
     fetchServers()
   }
 
@@ -83,11 +93,9 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
   }
 
   func tableViewSelectionDidChange(notification: NSNotification) {
-    if selectedServerRow() != nil {
-      deleteButton.hidden = false
-    } else {
-      deleteButton.hidden = true
-    }
+    let enableButton = selectedServerRow() != nil
+    removeButton.enabled = enableButton
+    errorBox.hidden = true
   }
 
   func numberOfRowsInTableView(aTableView: NSTableView) -> Int {
