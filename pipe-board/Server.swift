@@ -10,6 +10,8 @@ import Foundation
 import AppKit
 
 class Server: NSObject, NSCoding {
+  static let PreferenceKey = "PipeBoard:servers"
+
   var title: String?
   var address: String?
   
@@ -32,13 +34,13 @@ class Server: NSObject, NSCoding {
   
   class func saveServers(servers: [Server]) {
     let data = NSKeyedArchiver.archivedDataWithRootObject(servers)
-    NSUserDefaults.standardUserDefaults().setObject(data, forKey: "PipeBoard:servers")
+    NSUserDefaults.standardUserDefaults().setObject(data, forKey: PreferenceKey)
   }
   
   class func allServers() -> [Server] {
     let prefs = NSUserDefaults.standardUserDefaults()
     
-    if let data = prefs.objectForKey("PipeBoard:servers") as? NSData {
+    if let data = prefs.objectForKey(PreferenceKey) as? NSData {
       let servers = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [Server]
       return servers!
     }
