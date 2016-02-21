@@ -2,6 +2,8 @@
 
 Securely send your Mac's clipboard to other Macs
 
+![pipe-board](https://cloud.githubusercontent.com/assets/1136388/13203160/780f0f1a-d876-11e5-8a7f-87483e9751fe.gif)
+
 ## Information
 
 Pipe Board only works between OSX computers. You must have [key-based SSH access](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2) to the computer that will be receiving your clipboard. All clipboard content is sent securely over an SSH connection.
