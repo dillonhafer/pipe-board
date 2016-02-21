@@ -27,6 +27,13 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
 
       self.serverTable.insertRowsAtIndexes(NSIndexSet(index: newRowIndex), withAnimation: NSTableViewAnimationOptions.EffectGap)
       Server.saveServers(servers)
+    } else {
+      let alert: NSAlert = NSAlert()
+      alert.messageText = "Missing Fields"
+      alert.informativeText = "You must enter a title and address"
+      alert.alertStyle = NSAlertStyle.InformationalAlertStyle
+      alert.addButtonWithTitle("Got It")
+      alert.runModal()
     }
   }
 
