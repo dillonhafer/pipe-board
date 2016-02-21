@@ -24,18 +24,18 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
 
       let newRowIndex = self.servers.count
       self.servers.append(newServer)
-      
+
       self.serverTable.insertRowsAtIndexes(NSIndexSet(index: newRowIndex), withAnimation: NSTableViewAnimationOptions.EffectGap)
       Server.saveServers(servers)
     }
   }
-  
+
   @IBAction func Delete(sender: AnyObject) {
     if let server = selectedServerRow() {
       deleteButton.hidden = true
       self.serverTable.removeRowsAtIndexes(NSIndexSet(index:self.serverTable.selectedRow),
         withAnimation: NSTableViewAnimationOptions.SlideUp)
-      
+
       let idx = findServerIndex(server)
       servers.removeAtIndex(idx)
       Server.saveServers(servers)
@@ -46,7 +46,7 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
     super.viewDidLoad()
     fetchServers()
   }
-  
+
   func findServerIndex(server: Server) -> Int {
     var idx = 0
     for s in servers {
@@ -57,16 +57,16 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
     }
     return -1
   }
-  
+
   func fetchServers() {
     servers = Server.allServers()
 
     let max = servers.count == 0 ? 0 : servers.count - 1
     let range = NSMakeRange(0, max)
-    
+
     self.serverTable.insertRowsAtIndexes(NSIndexSet(indexesInRange: range), withAnimation: NSTableViewAnimationOptions.EffectGap)
   }
-  
+
   func selectedServerRow() -> Server? {
     let selectedRow = self.serverTable.selectedRow;
     if selectedRow >= 0 && selectedRow < self.servers.count {
@@ -74,7 +74,7 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
     }
     return nil
   }
-  
+
   func tableViewSelectionDidChange(notification: NSNotification) {
     if selectedServerRow() != nil {
       deleteButton.hidden = false
@@ -82,17 +82,17 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
       deleteButton.hidden = true
     }
   }
-  
+
   func numberOfRowsInTableView(aTableView: NSTableView) -> Int {
     return self.servers.count
   }
-  
+
   func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
     let cellView: NSTableCellView = tableView.makeViewWithIdentifier(tableColumn!.identifier, owner: self) as! NSTableCellView
-    
+
     if row < self.servers.count {
       let server = self.servers[row]
-      
+
       switch tableColumn!.identifier {
         case "title":
           cellView.textField!.stringValue = server.title!
