@@ -90,16 +90,18 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
     if row < self.servers.count {
       let server = self.servers[row]
       
-      if tableColumn!.identifier == "title" {
-        cellView.textField!.stringValue = server.title!
-        return cellView
+      switch tableColumn!.identifier {
+        case "title":
+          cellView.textField!.stringValue = server.title!
+          return cellView
+        case "address":
+          cellView.textField!.stringValue = server.address!
+          return cellView
+        default:
+          return nil
       }
-      
-      if tableColumn!.identifier == "address" {
-        cellView.textField!.stringValue = server.address!
-        return cellView
-      }
+    } else {
+      return nil
     }
-    return nil
   }
 }
