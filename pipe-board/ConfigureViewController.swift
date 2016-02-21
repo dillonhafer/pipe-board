@@ -51,8 +51,8 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
   }
 
   override func viewDidLoad() {
-      super.viewDidLoad()
-      fetchServers()
+    super.viewDidLoad()
+    fetchServers()
   }
   
   func fetchServers() {
