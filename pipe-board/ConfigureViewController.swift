@@ -34,8 +34,7 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
     if let server = selectedServerRow() {
       deleteButton.hidden = true
       self.serverTable.removeRowsAtIndexes(NSIndexSet(index:self.serverTable.selectedRow),
-        withAnimation: NSTableViewAnimationOptions.SlideRight)
-
+        withAnimation: NSTableViewAnimationOptions.SlideUp)
       
       var idx = 0
       for s in servers {
