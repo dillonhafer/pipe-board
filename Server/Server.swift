@@ -9,7 +9,7 @@
 import Foundation
 import AppKit
 
-public class PipeBoardServer: NSObject, NSCoding {
+public class Server: NSObject, NSCoding {
   static let ConfigFileName = ".pipe-board"
 
   public var title: String?
@@ -36,7 +36,7 @@ public class PipeBoardServer: NSObject, NSCoding {
     return title!.present() && address!.present()
   }
   
-  public class func saveServers(servers: [PipeBoardServer]) {
+  public class func saveServers(servers: [Server]) {
     var textArray: [String] = []
     for server in servers {
       textArray.append("\(server.title!): \(server.address!)")
@@ -55,8 +55,8 @@ public class PipeBoardServer: NSObject, NSCoding {
     }
   }
 
-  public class func allServers() -> [PipeBoardServer] {
-    var servers: [PipeBoardServer] = []
+  public class func allServers() -> [Server] {
+    var servers: [Server] = []
 
     if let dir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
       let path = dir.stringByAppendingPathComponent(ConfigFileName);
@@ -64,7 +64,7 @@ public class PipeBoardServer: NSObject, NSCoding {
         let text = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding) as String
         text.enumerateLines { (line, stop) -> () in
           let attrs = line.componentsSeparatedByString(": ")
-          let server = PipeBoardServer.init(title: attrs[0], address: attrs[1])
+          let server = Server.init(title: attrs[0], address: attrs[1])
           servers.append(server)
         }
       } catch {

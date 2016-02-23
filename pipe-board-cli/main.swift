@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import PipeBoardServer
+import Server
 
 for argument in Process.arguments {
   switch argument {
   case "list":
-    let servers = PipeBoardServer.allServers()
+    let servers = Server.allServers()
     print("Servers (\(servers.count)):");
     for server in servers {
       print("  • \(server.title!) (\(server.address!))")

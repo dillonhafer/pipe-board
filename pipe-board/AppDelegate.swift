@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import PipeBoardServer
+import Server
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -18,10 +18,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   let menu = NSMenu()
   let popover = NSPopover()
   var eventMonitor: EventMonitor?
-  var servers: [PipeBoardServer] = []
+  var servers: [Server] = []
 
   func applicationDidFinishLaunching(aNotification: NSNotification) {
     // Setup events
+    self.servers = Server.allServers()
     popover.contentViewController = ConfigureViewController(nibName: "ConfigureViewController", bundle: nil)
 
     eventMonitor = EventMonitor(mask: [.LeftMouseDownMask, .RightMouseDownMask]) { [unowned self] event in
@@ -85,8 +86,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
   
   func createServerItems() {
-    self.servers = PipeBoardServer.allServers()
-
     for server in self.servers {
       self.menu.addItem(NSMenuItem.init(title: server.title!, action: "sendClipboard:", keyEquivalent: ""))
     }

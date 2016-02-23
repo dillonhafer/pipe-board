@@ -7,17 +7,17 @@
 //
 
 import Cocoa
-import PipeBoardServer
+import Server
 
 class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
   @IBOutlet weak var serverTable: NSTableView!
   @IBOutlet weak var removeButton: NSButton!
   @IBOutlet weak var errorBox: NSTextField!
 
-  var servers: [PipeBoardServer] = []
+  var servers: [Server] = []
 
   @IBAction func Add(sender: AnyObject) {
-    let newServer = PipeBoardServer(title:"", address: "")
+    let newServer = Server(title:"", address: "")
     let idx = self.servers.count
     self.servers.append(newServer)
     self.serverTable.insertRowsAtIndexes(NSIndexSet(index: idx), withAnimation: NSTableViewAnimationOptions.SlideDown)
@@ -40,7 +40,7 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
       }
 
       if server.valid() {
-        PipeBoardServer.saveServers(servers)
+        Server.saveServers(servers)
         errorBox.hidden = true
       } else {
         errorBox.hidden = false
@@ -55,7 +55,7 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
 
       let idx = findServerIndex(server)
       servers.removeAtIndex(idx)
-      PipeBoardServer.saveServers(servers)
+      Server.saveServers(servers)
     }
   }
 
@@ -65,7 +65,7 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
     fetchServers()
   }
 
-  func findServerIndex(server: PipeBoardServer) -> Int {
+  func findServerIndex(server: Server) -> Int {
     var idx = 0
     for s in servers {
       if s == server {
@@ -77,7 +77,7 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
   }
 
   func fetchServers() {
-    servers = PipeBoardServer.allServers()
+    servers = Server.allServers()
 
     let max = servers.count == 0 ? 0 : servers.count - 1
     let range = NSMakeRange(0, max)
@@ -85,7 +85,7 @@ class ConfigureViewController: NSViewController, NSTableViewDelegate, NSTableVie
     self.serverTable.insertRowsAtIndexes(NSIndexSet(indexesInRange: range), withAnimation: NSTableViewAnimationOptions.EffectGap)
   }
 
-  func selectedServerRow() -> PipeBoardServer? {
+  func selectedServerRow() -> Server? {
     let selectedRow = self.serverTable.selectedRow;
     if selectedRow >= 0 && selectedRow < self.servers.count {
       return self.servers[selectedRow]
