@@ -7,18 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		514391D01C7949E100A655E3 /* CoreExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514391CF1C7949E100A655E3 /* CoreExtensions.swift */; };
+		512349FF1C7BF27500EA8C9E /* pipe-board-cli in Resources */ = {isa = PBXBuildFile; fileRef = 514391F41C7A210B00A655E3 /* pipe-board-cli */; };
+		514391F71C7A210B00A655E3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514391F61C7A210B00A655E3 /* main.swift */; };
+		514392391C7B5A4E00A655E3 /* PipeBoardServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514392381C7B5A4400A655E3 /* PipeBoardServer.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		51AA266A1C78148D009606DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA26691C78148D009606DD /* AppDelegate.swift */; };
 		51AA266C1C78148D009606DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51AA266B1C78148D009606DD /* Assets.xcassets */; };
 		51AA266F1C78148D009606DD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51AA266D1C78148D009606DD /* MainMenu.xib */; };
 		51AA26781C781580009606DD /* ConfigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA26761C781580009606DD /* ConfigureViewController.swift */; };
 		51AA26791C781580009606DD /* ConfigureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51AA26771C781580009606DD /* ConfigureViewController.xib */; };
 		51AA267B1C781C77009606DD /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA267A1C781C77009606DD /* EventMonitor.swift */; };
-		51AA267D1C7829B5009606DD /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA267C1C7829B5009606DD /* Server.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		514392371C7B5A4400A655E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 514392331C7B5A4400A655E3 /* PipeBoardServer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5143920A1C7B543F00A655E3;
+			remoteInfo = PipeBoardServer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		514391F21C7A210B00A655E3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = usr/share/man/man1;
+			dstSubfolderSpec = 11;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		514391CF1C7949E100A655E3 /* CoreExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreExtensions.swift; sourceTree = "<group>"; };
+		514391F41C7A210B00A655E3 /* pipe-board-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "pipe-board-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
+		514391F61C7A210B00A655E3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		514392331C7B5A4400A655E3 /* PipeBoardServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PipeBoardServer.xcodeproj; path = ../PipeBoardServer/PipeBoardServer.xcodeproj; sourceTree = "<group>"; };
 		51AA26661C78148D009606DD /* Pipe Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pipe Board.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51AA26691C78148D009606DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51AA266B1C78148D009606DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -27,10 +52,17 @@
 		51AA26761C781580009606DD /* ConfigureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureViewController.swift; sourceTree = "<group>"; };
 		51AA26771C781580009606DD /* ConfigureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigureViewController.xib; sourceTree = "<group>"; };
 		51AA267A1C781C77009606DD /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
-		51AA267C1C7829B5009606DD /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		514391F11C7A210B00A655E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				514392391C7B5A4E00A655E3 /* PipeBoardServer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51AA26631C78148D009606DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -41,10 +73,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		514391F51C7A210B00A655E3 /* pipe-board-cli */ = {
+			isa = PBXGroup;
+			children = (
+				514391F61C7A210B00A655E3 /* main.swift */,
+			);
+			path = "pipe-board-cli";
+			sourceTree = "<group>";
+		};
+		514392341C7B5A4400A655E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				514392381C7B5A4400A655E3 /* PipeBoardServer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5143923B1C7B838600A655E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				514392331C7B5A4400A655E3 /* PipeBoardServer.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		51AA265D1C78148D009606DD = {
 			isa = PBXGroup;
 			children = (
+				5143923B1C7B838600A655E3 /* Frameworks */,
 				51AA26681C78148D009606DD /* pipe-board */,
+				514391F51C7A210B00A655E3 /* pipe-board-cli */,
 				51AA26671C78148D009606DD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				51AA26661C78148D009606DD /* Pipe Board.app */,
+				514391F41C7A210B00A655E3 /* pipe-board-cli */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,8 +126,6 @@
 				51AA26761C781580009606DD /* ConfigureViewController.swift */,
 				51AA267A1C781C77009606DD /* EventMonitor.swift */,
 				51AA26771C781580009606DD /* ConfigureViewController.xib */,
-				51AA267C1C7829B5009606DD /* Server.swift */,
-				514391CF1C7949E100A655E3 /* CoreExtensions.swift */,
 			);
 			path = "pipe-board";
 			sourceTree = "<group>";
@@ -76,6 +133,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		514391F31C7A210B00A655E3 /* pipe-board-cli */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 514391F81C7A210B00A655E3 /* Build configuration list for PBXNativeTarget "pipe-board-cli" */;
+			buildPhases = (
+				514391F01C7A210B00A655E3 /* Sources */,
+				514391F11C7A210B00A655E3 /* Frameworks */,
+				514391F21C7A210B00A655E3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "pipe-board-cli";
+			productName = "pipe-board-cli";
+			productReference = 514391F41C7A210B00A655E3 /* pipe-board-cli */;
+			productType = "com.apple.product-type.tool";
+		};
 		51AA26651C78148D009606DD /* pipe-board */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51AA26731C78148D009606DD /* Build configuration list for PBXNativeTarget "pipe-board" */;
@@ -99,10 +173,16 @@
 		51AA265E1C78148D009606DD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Dillon Hafer";
 				TargetAttributes = {
+					514391F31C7A210B00A655E3 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
 					51AA26651C78148D009606DD = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
@@ -119,18 +199,36 @@
 			mainGroup = 51AA265D1C78148D009606DD;
 			productRefGroup = 51AA26671C78148D009606DD /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 514392341C7B5A4400A655E3 /* Products */;
+					ProjectRef = 514392331C7B5A4400A655E3 /* PipeBoardServer.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				51AA26651C78148D009606DD /* pipe-board */,
+				514391F31C7A210B00A655E3 /* pipe-board-cli */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		514392381C7B5A4400A655E3 /* PipeBoardServer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PipeBoardServer.framework;
+			remoteRef = 514392371C7B5A4400A655E3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		51AA26641C78148D009606DD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				512349FF1C7BF27500EA8C9E /* pipe-board-cli in Resources */,
 				51AA266C1C78148D009606DD /* Assets.xcassets in Resources */,
 				51AA26791C781580009606DD /* ConfigureViewController.xib in Resources */,
 				51AA266F1C78148D009606DD /* MainMenu.xib in Resources */,
@@ -140,14 +238,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		514391F01C7A210B00A655E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				514391F71C7A210B00A655E3 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51AA26621C78148D009606DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				51AA267B1C781C77009606DD /* EventMonitor.swift in Sources */,
 				51AA266A1C78148D009606DD /* AppDelegate.swift in Sources */,
-				51AA267D1C7829B5009606DD /* Server.swift in Sources */,
-				514391D01C7949E100A655E3 /* CoreExtensions.swift in Sources */,
 				51AA26781C781580009606DD /* ConfigureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,6 +270,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		514391F91C7A210B00A655E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "@executable_path";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		514391FA1C7A210B00A655E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "@executable_path";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		51AA26711C78148D009606DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -186,6 +314,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -230,6 +359,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -251,6 +381,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "pipe-board/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dillonhafer.pipe-board";
@@ -263,6 +397,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "pipe-board/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dillonhafer.pipe-board";
@@ -273,6 +411,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		514391F81C7A210B00A655E3 /* Build configuration list for PBXNativeTarget "pipe-board-cli" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				514391F91C7A210B00A655E3 /* Debug */,
+				514391FA1C7A210B00A655E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		51AA26611C78148D009606DD /* Build configuration list for PBXProject "pipe-board" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
