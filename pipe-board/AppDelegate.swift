@@ -86,6 +86,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
   
   func createServerItems() {
+    servers = Server.allServers()
     for server in self.servers {
       self.menu.addItem(NSMenuItem.init(title: server.title!, action: "sendClipboard:", keyEquivalent: ""))
     }
