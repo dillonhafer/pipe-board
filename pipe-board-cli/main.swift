@@ -18,6 +18,6 @@ for argument in Process.arguments {
       print("  • \(server.title!) (\(server.address!))")
     }
   default:
-    print("Pipe Board");
+    print("Pipe Board © 2016 Dillon Hafer. All rights reserved.");
   }
 }

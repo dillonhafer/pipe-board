@@ -16,8 +16,8 @@
 		5143920A1C7B543F00A655E3 /* PipeBoardServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PipeBoardServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5143920D1C7B543F00A655E3 /* PipeBoardServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PipeBoardServer.h; sourceTree = "<group>"; };
 		5143920F1C7B543F00A655E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5143922C1C7B587500A655E3 /* PipeBoardServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PipeBoardServer.swift; path = ../../../Desktop/PipeBoardServer.swift; sourceTree = "<group>"; };
-		5143922E1C7B587E00A655E3 /* CoreExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreExtensions.swift; path = ../../../Desktop/CoreExtensions.swift; sourceTree = "<group>"; };
+		5143922C1C7B587500A655E3 /* PipeBoardServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipeBoardServer.swift; sourceTree = "<group>"; };
+		5143922E1C7B587E00A655E3 /* CoreExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
