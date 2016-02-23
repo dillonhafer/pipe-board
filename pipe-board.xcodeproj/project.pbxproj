@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		512349FF1C7BF27500EA8C9E /* pipe-board-cli in Resources */ = {isa = PBXBuildFile; fileRef = 514391F41C7A210B00A655E3 /* pipe-board-cli */; };
 		514391F71C7A210B00A655E3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514391F61C7A210B00A655E3 /* main.swift */; };
-		514392391C7B5A4E00A655E3 /* PipeBoardServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514392381C7B5A4400A655E3 /* PipeBoardServer.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		51AA266A1C78148D009606DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA26691C78148D009606DD /* AppDelegate.swift */; };
 		51AA266C1C78148D009606DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51AA266B1C78148D009606DD /* Assets.xcassets */; };
 		51AA266F1C78148D009606DD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51AA266D1C78148D009606DD /* MainMenu.xib */; };
@@ -19,7 +18,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		514392371C7B5A4400A655E3 /* PBXContainerItemProxy */ = {
+		51234A011C7BF48100EA8C9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51AA265E1C78148D009606DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 514391F31C7A210B00A655E3;
+			remoteInfo = "pipe-board-cli";
+		};
+		51234A061C7BF4C700EA8C9E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 514392331C7B5A4400A655E3 /* PipeBoardServer.xcodeproj */;
 			proxyType = 2;
@@ -43,7 +49,7 @@
 /* Begin PBXFileReference section */
 		514391F41C7A210B00A655E3 /* pipe-board-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "pipe-board-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
 		514391F61C7A210B00A655E3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		514392331C7B5A4400A655E3 /* PipeBoardServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PipeBoardServer.xcodeproj; path = ../PipeBoardServer/PipeBoardServer.xcodeproj; sourceTree = "<group>"; };
+		514392331C7B5A4400A655E3 /* PipeBoardServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PipeBoardServer.xcodeproj; path = PipeBoardServer/PipeBoardServer.xcodeproj; sourceTree = "<group>"; };
 		51AA26661C78148D009606DD /* Pipe Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pipe Board.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51AA26691C78148D009606DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51AA266B1C78148D009606DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				514392391C7B5A4E00A655E3 /* PipeBoardServer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,20 +78,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51234A031C7BF4C700EA8C9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				51234A071C7BF4C700EA8C9E /* PipeBoardServer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		514391F51C7A210B00A655E3 /* pipe-board-cli */ = {
 			isa = PBXGroup;
 			children = (
 				514391F61C7A210B00A655E3 /* main.swift */,
 			);
 			path = "pipe-board-cli";
-			sourceTree = "<group>";
-		};
-		514392341C7B5A4400A655E3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				514392381C7B5A4400A655E3 /* PipeBoardServer.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		5143923B1C7B838600A655E3 /* Frameworks */ = {
@@ -161,6 +166,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				51234A021C7BF48100EA8C9E /* PBXTargetDependency */,
 			);
 			name = "pipe-board";
 			productName = "pipe-board";
@@ -201,7 +207,7 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 514392341C7B5A4400A655E3 /* Products */;
+					ProductGroup = 51234A031C7BF4C700EA8C9E /* Products */;
 					ProjectRef = 514392331C7B5A4400A655E3 /* PipeBoardServer.xcodeproj */;
 				},
 			);
@@ -214,11 +220,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		514392381C7B5A4400A655E3 /* PipeBoardServer.framework */ = {
+		51234A071C7BF4C700EA8C9E /* PipeBoardServer.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = PipeBoardServer.framework;
-			remoteRef = 514392371C7B5A4400A655E3 /* PBXContainerItemProxy */;
+			remoteRef = 51234A061C7BF4C700EA8C9E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -257,6 +263,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		51234A021C7BF48100EA8C9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 514391F31C7A210B00A655E3 /* pipe-board-cli */;
+			targetProxy = 51234A011C7BF48100EA8C9E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		51AA266D1C78148D009606DD /* MainMenu.xib */ = {
